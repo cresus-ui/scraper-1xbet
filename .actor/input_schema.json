@@ -73,11 +73,11 @@
         },
         "delayBetweenRequests": {
             "title": "Delay between requests (seconds)",
-            "type": "number",
+            "type": "integer",
             "description": "Delay between HTTP requests to respect rate limits",
-            "minimum": 0.5,
-            "maximum": 10.0,
-            "default": 2.0,
+            "minimum": 1,
+            "maximum": 10,
+            "default": 2,
             "editor": "number"
         },
         "competitions": {
