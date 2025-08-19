@@ -18,15 +18,13 @@
         "startDate": {
             "title": "Start date",
             "type": "string",
-            "format": "date",
-            "description": "Start date for data extraction (YYYY-MM-DD)",
+            "description": "Start date for data extraction (YYYY-MM-DD format)",
             "editor": "datepicker"
         },
         "endDate": {
             "title": "End date",
             "type": "string",
-            "format": "date",
-            "description": "End date for data extraction (YYYY-MM-DD)",
+            "description": "End date for data extraction (YYYY-MM-DD format)",
             "editor": "datepicker"
         },
         "includePreMatch": {
