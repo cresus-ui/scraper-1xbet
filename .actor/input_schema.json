@@ -1,0 +1,128 @@
+{
+    "title": "1xbet Sports Data Scraper Configuration",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "sports": {
+            "title": "Sports to scrape",
+            "type": "array",
+            "description": "List of sports to extract data from",
+            "editor": "select",
+            "items": {
+                "type": "string",
+                "enum": ["football", "tennis", "basketball", "hockey", "volleyball", "baseball", "handball"]
+            },
+            "default": ["football"],
+            "prefill": ["football"]
+        },
+        "startDate": {
+            "title": "Start date",
+            "type": "string",
+            "format": "date",
+            "description": "Start date for data extraction (YYYY-MM-DD)",
+            "editor": "datepicker"
+        },
+        "endDate": {
+            "title": "End date",
+            "type": "string",
+            "format": "date",
+            "description": "End date for data extraction (YYYY-MM-DD)",
+            "editor": "datepicker"
+        },
+        "includePreMatch": {
+            "title": "Include pre-match data",
+            "type": "boolean",
+            "description": "Extract pre-match data (teams, odds, lineups, weather)",
+            "default": true,
+            "editor": "checkbox"
+        },
+        "includePostMatch": {
+            "title": "Include post-match data",
+            "type": "boolean",
+            "description": "Extract post-match data (results, statistics, events)",
+            "default": true,
+            "editor": "checkbox"
+        },
+        "includeWeather": {
+            "title": "Include weather data",
+            "type": "boolean",
+            "description": "Extract weather conditions for outdoor matches",
+            "default": false,
+            "editor": "checkbox"
+        },
+        "includeLineups": {
+            "title": "Include team lineups",
+            "type": "boolean",
+            "description": "Extract team compositions and player information",
+            "default": false,
+            "editor": "checkbox"
+        },
+        "includeStatistics": {
+            "title": "Include detailed statistics",
+            "type": "boolean",
+            "description": "Extract detailed match and player statistics",
+            "default": true,
+            "editor": "checkbox"
+        },
+        "maxMatchesPerSport": {
+            "title": "Max matches per sport",
+            "type": "integer",
+            "description": "Maximum number of matches to extract per sport",
+            "minimum": 1,
+            "maximum": 1000,
+            "default": 100,
+            "editor": "number"
+        },
+        "delayBetweenRequests": {
+            "title": "Delay between requests (seconds)",
+            "type": "number",
+            "description": "Delay between HTTP requests to respect rate limits",
+            "minimum": 0.5,
+            "maximum": 10.0,
+            "default": 2.0,
+            "editor": "number"
+        },
+        "competitions": {
+            "title": "Specific competitions",
+            "type": "array",
+            "description": "Filter by specific competitions/leagues (optional)",
+            "items": {
+                "type": "string"
+            },
+            "editor": "stringList"
+        },
+        "countries": {
+            "title": "Countries filter",
+            "type": "array",
+            "description": "Filter matches by countries (optional)",
+            "items": {
+                "type": "string"
+            },
+            "editor": "stringList"
+        },
+        "proxyConfiguration": {
+            "title": "Proxy configuration",
+            "type": "object",
+            "description": "Proxy settings for requests",
+            "editor": "proxy",
+            "prefill": {
+                "useApifyProxy": true
+            }
+        },
+        "respectRobotsText": {
+            "title": "Respect robots.txt",
+            "type": "boolean",
+            "description": "Follow robots.txt directives",
+            "default": true,
+            "editor": "checkbox"
+        },
+        "debugMode": {
+            "title": "Debug mode",
+            "type": "boolean",
+            "description": "Enable detailed logging for debugging",
+            "default": false,
+            "editor": "checkbox"
+        }
+    },
+    "required": ["sports"]
+}

@@ -1,0 +1,30 @@
+{
+    "actorSpecification": 1,
+    "name": "1xbet-scraper",
+    "title": "1xbet Sports Data Scraper",
+    "description": "Advanced scraper for extracting pre-match and post-match sports data from 1xbet.com. Supports multiple sports, real-time odds, team statistics, weather conditions, and comprehensive match analysis.",
+    "version": "1.0.0",
+    "buildTag": "latest",
+    "meta": {
+        "templateId": "python-start",
+        "categories": ["SPORTS", "SCRAPING", "DATA_EXTRACTION"],
+        "isPublic": true
+    },
+    "input": "./input_schema.json",
+    "dockerfile": "../Dockerfile",
+    "storages": {
+        "dataset": {
+            "actorSpecification": 1,
+            "title": "1xbet Sports Data",
+            "description": "Structured sports data extracted from 1xbet.com",
+            "views": {
+                "overview": {
+                    "title": "Overview",
+                    "transformation": {
+                        "fields": ["match_id", "sport_type", "match_date", "teams", "status"]
+                    }
+                }
+            }
+        }
+    }
+}

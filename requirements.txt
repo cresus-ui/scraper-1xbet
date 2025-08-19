@@ -1,0 +1,38 @@
+# Feel free to add your Python dependencies below. For formatting guidelines, see:
+# https://pip.pypa.io/en/latest/reference/requirements-file-format/
+
+# Core Apify dependencies
+apify < 3.0
+
+# Web scraping and HTTP
+beautifulsoup4[lxml]
+httpx
+playwright >= 1.40.0
+
+# Data validation and processing
+pydantic >= 2.0.0
+pydantic-settings
+
+# System monitoring and performance
+psutil >= 5.9.0
+
+# Async file operations
+aiofiles >= 23.0.0
+
+# Date and time handling
+python-dateutil
+
+# Logging and configuration
+structlog
+pyyaml
+
+# Type hints
+types-beautifulsoup4
+types-pyyaml
+types-python-dateutil
+
+# Development and testing (optional)
+# pytest
+# pytest-asyncio
+# black
+# flake8

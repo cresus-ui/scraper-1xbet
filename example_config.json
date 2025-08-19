@@ -1,0 +1,156 @@
+{
+  "_comment": "Exemple de configuration pour le scraper 1xBet",
+  "_description": "Ce fichier montre différents exemples de configuration selon vos besoins",
+  
+  "basic_config": {
+    "_description": "Configuration basique pour débuter",
+    "sports": ["football"],
+    "extraction_type": "both",
+    "max_matches_per_sport": 50,
+    "include_odds": true,
+    "include_statistics": false,
+    "include_lineups": false
+  },
+  
+  "advanced_config": {
+    "_description": "Configuration avancée avec toutes les options",
+    "sports": ["football", "basketball", "tennis"],
+    "extraction_type": "both",
+    "max_matches_per_sport": 100,
+    "include_odds": true,
+    "include_statistics": true,
+    "include_lineups": true,
+    "include_weather": true,
+    "date_range": {
+      "start_date": "2024-01-01",
+      "end_date": "2024-01-31"
+    },
+    "output_format": "json",
+    "parallel_requests": 5,
+    "request_delay": 1.5,
+    "max_retries": 3,
+    "timeout": 45,
+    "monitoring": {
+      "enable_alerts": true,
+      "health_check_interval": 300,
+      "max_error_rate": 0.1
+    },
+    "proxy_configuration": {
+      "useApifyProxy": true,
+      "apifyProxyGroups": ["RESIDENTIAL"]
+    },
+    "debug_mode": false,
+    "save_screenshots": false
+  },
+  
+  "football_only_config": {
+    "_description": "Configuration spécialisée pour le football uniquement",
+    "sports": ["football"],
+    "extraction_type": "both",
+    "max_matches_per_sport": 200,
+    "include_odds": true,
+    "include_statistics": true,
+    "include_lineups": true,
+    "include_weather": true,
+    "date_range": {
+      "start_date": "2024-01-01",
+      "end_date": "2024-12-31"
+    },
+    "output_format": "json",
+    "parallel_requests": 3,
+    "request_delay": 2,
+    "monitoring": {
+      "enable_alerts": true,
+      "health_check_interval": 180,
+      "max_error_rate": 0.05
+    }
+  },
+  
+  "fast_extraction_config": {
+    "_description": "Configuration pour extraction rapide (sans détails)",
+    "sports": ["football", "basketball", "tennis", "volleyball"],
+    "extraction_type": "prematch",
+    "max_matches_per_sport": 500,
+    "include_odds": true,
+    "include_statistics": false,
+    "include_lineups": false,
+    "include_weather": false,
+    "output_format": "csv",
+    "parallel_requests": 8,
+    "request_delay": 0.5,
+    "max_retries": 2,
+    "timeout": 20
+  },
+  
+  "detailed_analysis_config": {
+    "_description": "Configuration pour analyse détaillée (plus lent)",
+    "sports": ["football"],
+    "extraction_type": "postmatch",
+    "max_matches_per_sport": 50,
+    "include_odds": true,
+    "include_statistics": true,
+    "include_lineups": true,
+    "include_weather": true,
+    "date_range": {
+      "start_date": "2024-01-01",
+      "end_date": "2024-01-07"
+    },
+    "output_format": "xlsx",
+    "parallel_requests": 2,
+    "request_delay": 3,
+    "max_retries": 5,
+    "timeout": 60,
+    "monitoring": {
+      "enable_alerts": true,
+      "health_check_interval": 120,
+      "max_error_rate": 0.02
+    },
+    "debug_mode": true,
+    "save_screenshots": true
+  },
+  
+  "esports_config": {
+    "_description": "Configuration spécialisée pour les esports",
+    "sports": ["esports"],
+    "extraction_type": "both",
+    "max_matches_per_sport": 100,
+    "include_odds": true,
+    "include_statistics": true,
+    "include_lineups": true,
+    "output_format": "json",
+    "parallel_requests": 4,
+    "request_delay": 1,
+    "monitoring": {
+      "enable_alerts": true,
+      "health_check_interval": 240,
+      "max_error_rate": 0.15
+    }
+  },
+  
+  "production_config": {
+    "_description": "Configuration recommandée pour la production",
+    "sports": ["football", "basketball", "tennis"],
+    "extraction_type": "both",
+    "max_matches_per_sport": 150,
+    "include_odds": true,
+    "include_statistics": true,
+    "include_lineups": false,
+    "include_weather": false,
+    "output_format": "json",
+    "parallel_requests": 3,
+    "request_delay": 2,
+    "max_retries": 3,
+    "timeout": 30,
+    "monitoring": {
+      "enable_alerts": true,
+      "health_check_interval": 300,
+      "max_error_rate": 0.1
+    },
+    "proxy_configuration": {
+      "useApifyProxy": true,
+      "apifyProxyGroups": ["RESIDENTIAL"]
+    },
+    "debug_mode": false,
+    "save_screenshots": false
+  }
+}
