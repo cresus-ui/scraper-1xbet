@@ -12,7 +12,7 @@ from pathlib import Path
 from pydantic import BaseModel, Field, validator, ValidationError
 from enum import Enum
 
-from .config import ScrapingConfig
+from config import ScrapingConfig
 
 
 class MatchStatus(str, Enum):

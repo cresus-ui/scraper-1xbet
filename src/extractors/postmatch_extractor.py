@@ -12,9 +12,13 @@ from datetime import datetime, timezone
 from bs4 import BeautifulSoup
 import json
 
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from session_manager import SessionManager
 from config import ScrapingConfig
-from extractors.prematch_extractor import PreMatchExtractor
+from .prematch_extractor import PreMatchExtractor
 
 
 class PostMatchExtractor(PreMatchExtractor):

@@ -18,8 +18,9 @@ from config import ConfigManager, ScrapingConfig
 class SessionManager:
     """Manages browser sessions and page interactions for scraping."""
     
-    def __init__(self, config: ScrapingConfig):
-        self.config = config
+    def __init__(self, config_manager: ConfigManager):
+        self.config_manager = config_manager
+        self.config = config_manager.get_config()
         self.logger = logging.getLogger(__name__)
         self.playwright: Optional[Playwright] = None
         self.browser: Optional[Browser] = None
@@ -71,7 +72,7 @@ class SessionManager:
             }
             
             # Add proxy configuration if available
-            proxy_config = self.config.get_proxy_config()
+            proxy_config = self.config_manager.get_proxy_config()
             if proxy_config:
                 context_options['proxy'] = proxy_config
             
